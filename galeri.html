@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Galeri Kegiatan - RISMA</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    /* LOADING */
+    #loading {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: #2c3e50;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 9999;
+      color: white;
+    }
+
+    .logo {
+      width: 120px;
+      animation: fade 2s infinite;
+    }
+
+    @keyframes fade {
+      0% { opacity: 0; transform: scale(0.9); }
+      50% { opacity: 1; transform: scale(1); }
+      100% { opacity: 0; transform: scale(0.9); }
+    }
+
+    /* NAVBAR */
+    nav {
+      position: fixed;
+      width: 100%;
+      padding: 15px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: 0.3s;
+      z-index: 1000;
+      background: rgba(0,0,0,0.7);
+    }
+
+    nav h2 {
+      color: white;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    /* GALERI */
+    #galeri {
+      padding: 50px;
+      background: #f4f4f4;
+      text-align: center;
+      padding-top: 120px;
+    }
+
+    .galeri-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .galeri-item {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .galeri-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .galeri-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .galeri-item p {
+      padding: 10px;
+      font-size: 14px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      background: #3498db;
+      color: white;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+      display: inline-block;
+      margin-top: 20px;
+    }
+
+    .btn:hover {
+      background: #2980b9;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- LOADING -->
+<div id="loading">
+  <img src="https://i.pravatar.cc/200" class="logo">
+  <h2>Memuat Website...</h2>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <h2>RISMA</h2>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="index.html#struktur">Struktur</a>
+    <a href="index.html#progja">Progja</a>
+    <a href="galeri.html">Galeri</a>
+  </div>
+</nav>
+
+<!-- GALERI -->
+<section id="galeri">
+  <h2>Galeri Kegiatan RISMA</h2>
+  <div class="galeri-grid">
+    <div class="galeri-item">
+      <img src="https://picsum.photos/300/200?random=1" alt="Kegiatan 1">
+      <p>Pengajian Rutin</p>
+    </div>
+    <div class="galeri-item">
+      <img src="https://picsum.photos/300/200?random=2" alt="Kegiatan 2">
+      <p>Bazaar Amal</p>
+    </div>
+    <div class="galeri-item">
+      <img src="https://picsum.photos/300/200?random=3" alt="Kegiatan 3">
+      <p>Kajian Islam</p>
+    </div>
+    <div class="galeri-item">
+      <img src="https://picsum.photos/300/200?random=4" alt="Kegiatan 4">
+      <p>Workshop Kepemimpinan</p>
+    </div>
+    <div class="galeri-item">
+      <img src="https://picsum.photos/300/200?random=5" alt="Kegiatan 5">
+      <p>Kegiatan Sosial</p>
+    </div>
+    <div class="galeri-item">
+      <img src="https://picsum.photos/300/200?random=6" alt="Kegiatan 6">
+      <p>Rapat Koordinasi</p>
+    </div>
+  </div>
+  <a href="index.html" class="btn">Kembali ke Home</a>
+</section>
+
+<script>
+  // LOADING
+  setTimeout(() => {
+    document.getElementById("loading").style.display = "none";
+  }, 3000);
+
+  // NAVBAR SCROLL
+  window.addEventListener("scroll", function() {
+    let navbar = document.getElementById("navbar");
+    navbar.classList.toggle("scrolled", window.scrollY > 50);
+  });
+</script>
+
+</body>
+</html>

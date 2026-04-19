@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Progja Syiar Islam - RISMA</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    /* LOADING */
+    #loading {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: #2c3e50;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 9999;
+      color: white;
+    }
+
+    .logo {
+      width: 120px;
+      animation: fade 2s infinite;
+    }
+
+    @keyframes fade {
+      0% { opacity: 0; transform: scale(0.9); }
+      50% { opacity: 1; transform: scale(1); }
+      100% { opacity: 0; transform: scale(0.9); }
+    }
+
+    /* NAVBAR */
+    nav {
+      position: fixed;
+      width: 100%;
+      padding: 15px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: 0.3s;
+      z-index: 1000;
+      background: rgba(0,0,0,0.7);
+    }
+
+    nav h2 {
+      color: white;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    /* PROGJA */
+    #progja {
+      padding: 50px;
+      background: linear-gradient(to right, #3498db, #2ecc71);
+      color: white;
+      text-align: center;
+      padding-top: 120px;
+      min-height: 100vh;
+    }
+
+    .progja-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .progja-header {
+      margin-bottom: 40px;
+    }
+
+    .progja-header h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .progja-header p {
+      font-size: 18px;
+    }
+
+    .progja-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .progja-item {
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 15px;
+      width: 300px;
+      transition: 0.3s;
+      backdrop-filter: blur(10px);
+    }
+
+    .progja-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    }
+
+    .progja-item h3 {
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .progja-item p {
+      color: #ecf0f1;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      background: white;
+      color: #2c3e50;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+      display: inline-block;
+      margin-top: 20px;
+    }
+
+    .btn:hover {
+      background: #ddd;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- LOADING -->
+<div id="loading">
+  <img src="https://i.pravatar.cc/200" class="logo">
+  <h2>Memuat Website...</h2>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <h2>RISMA</h2>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="struktur.html">Struktur</a>
+  </div>
+</nav>
+
+<!-- PROGJA -->
+<section id="progja">
+  <div class="progja-container">
+    <div class="progja-header">
+      <h1>Program Kerja Syiar Islam</h1>
+      <p>Menyampaikan dakwah dan kajian untuk memperkuat iman dan taqwa</p>
+    </div>
+
+    <div class="progja-content">
+      <div class="progja-item">
+        <h3>Belajar Doa Silsilah</h3>
+        <p>Pembelajaran mendalam tentang doa-doa silsilah dan maknanya dalam kehidupan sehari-hari.</p>
+      </div>
+
+      <div class="progja-item">
+        <h3>Belajar Memandikan Jenazah</h3>
+        <p>Pelatihan praktis tata cara memandikan jenazah sesuai dengan ajaran Islam.</p>
+      </div>
+
+      <div class="progja-item">
+        <h3>Ngaji Tilam</h3>
+        <p>Pengajian santai dan interaktif dengan metode pembelajaran yang menyenangkan.</p>
+      </div>
+
+      <div class="progja-item">
+        <h3>Mengajak & Acara Besar Islam</h3>
+        <p>Program untuk mengajak generasi muda dan menyelenggarakan acara besar peringatan hari-hari Islam.</p>
+      </div>
+
+      <div class="progja-item">
+        <h3>Belajar Adzan</h3>
+        <p>Pelatihan teknik adzan yang benar sesuai dengan tajweed dan syariat Islam.</p>
+      </div>
+
+      <div class="progja-item">
+        <h3>KARISMA</h3>
+        <p>Kajian RISMA - Forum diskusi mendalam tentang isu-isu keislaman kontemporer.</p>
+      </div>
+
+      <div class="progja-item">
+        <h3>Kajian Putri</h3>
+        <p>Program khusus untuk para putri muslimah dalam meningkatkan pemahaman agama dan kepemimpinan.</p>
+      </div>
+    </div>
+
+    <a href="index.html" class="btn">Kembali ke Home</a>
+  </div>
+</section>
+
+<script>
+  // LOADING
+  setTimeout(() => {
+    document.getElementById("loading").style.display = "none";
+  }, 3000);
+
+  // NAVBAR SCROLL
+  window.addEventListener("scroll", function() {
+    let navbar = document.getElementById("navbar");
+    navbar.classList.toggle("scrolled", window.scrollY > 50);
+  });
+</script>
+
+</body>
+</html>

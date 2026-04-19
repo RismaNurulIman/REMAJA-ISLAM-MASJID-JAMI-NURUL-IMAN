@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Struktur Organisasi - RISMA</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    /* LOADING */
+    #loading {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: #2c3e50;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 9999;
+      color: white;
+    }
+
+    .logo {
+      width: 120px;
+      animation: fade 2s infinite;
+    }
+
+    @keyframes fade {
+      0% { opacity: 0; transform: scale(0.9); }
+      50% { opacity: 1; transform: scale(1); }
+      100% { opacity: 0; transform: scale(0.9); }
+    }
+
+    /* NAVBAR */
+    nav {
+      position: fixed;
+      width: 100%;
+      padding: 15px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: 0.3s;
+      z-index: 1000;
+      background: rgba(0,0,0,0.7);
+    }
+
+    nav h2 {
+      color: white;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    /* STRUKTUR */
+    #struktur {
+      padding: 50px;
+      background: #f4f4f4;
+      text-align: center;
+      padding-top: 120px; /* Adjust for fixed navbar */
+    }
+
+    .card {
+      background: white;
+      padding: 15px;
+      margin: 15px;
+      border-radius: 15px;
+      display: inline-block;
+      width: 200px;
+      transition: 0.3s;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- LOADING -->
+<div id="loading">
+  <img src="https://i.pravatar.cc/200" class="logo">
+  <h2>Memuat Website...</h2>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <h2>RISMA</h2>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="struktur.html">Struktur</a>
+  </div>
+</nav>
+
+<!-- STRUKTUR -->
+<section id="struktur">
+  <h2>Struktur Organisasi</h2>
+  <div class="org-chart">
+    <svg width="800" height="1800" viewBox="0 0 800 1800">
+      <defs>
+        <clipPath id="portrait">
+          <ellipse cx="55" cy="65" rx="55" ry="65"/>
+        </clipPath>
+        <linearGradient id="headingGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+        </linearGradient>
+      </defs>
+      <!-- Ketua -->
+      <g class="person">
+        <rect x="325" y="10" width="150" height="190" fill="white" rx="10" ry="10" stroke="#ccc" stroke-width="1"/>
+        <image x="345" y="30" width="110" height="130" href="https://i.pravatar.cc/200" clip-path="url(#portrait)"/>
+        <text x="400" y="225" text-anchor="middle" font-size="12">Ketua</text>
+        <text x="400" y="240" text-anchor="middle" font-size="10">Nama Ketua</text>
+      </g>
+
+      <!-- Wakil Ketua -->
+      <g class="person">
+        <rect x="325" y="250" width="150" height="190" fill="white" rx="10" ry="10" stroke="#ccc" stroke-width="1"/>
+        <image x="345" y="270" width="110" height="130" href="https://i.pravatar.cc/200" clip-path="url(#portrait)"/>
+        <text x="400" y="475" text-anchor="middle" font-size="12">Wakil Ketua</text>
+        <text x="400" y="490" text-anchor="middle" font-size="10">Nama Wakil</text>
+      </g>
+
+      <!-- Sekretaris -->
+      <g class="person">
+        <rect x="125" y="410" width="150" height="170" fill="white" rx="10" ry="10" stroke="#ccc" stroke-width="1"/>
+        <image x="145" y="430" width="110" height="130" href="https://i.pravatar.cc/200" clip-path="url(#portrait)"/>
+        <text x="200" y="605" text-anchor="middle" font-size="12">Sekretaris</text>
+        <text x="200" y="620" text-anchor="middle" font-size="10">Nama Sekretaris</text>
+      </g>
+
+      <!-- Bendahara -->
+      <g class="person">
+        <rect x="525" y="410" width="150" height="170" fill="white" rx="10" ry="10" stroke="#ccc" stroke-width="1"/>
+        <image x="545" y="430" width="110" height="130" href="https://i.pravatar.cc/200" clip-path="url(#portrait)"/>
+        <text x="600" y="605" text-anchor="middle" font-size="12">Bendahara</text>
+        <text x="600" y="620" text-anchor="middle" font-size="10">Nama Bendahara</text>
+      </g>
+
+      <!-- Humas -->
+      <g class="person">
+        <rect x="325" y="650" width="150" height="170" fill="white" rx="10" ry="10" stroke="#ccc" stroke-width="1"/>
+        <image x="345" y="660" width="110" height="130" href="https://i.pravatar.cc/200" clip-path="url(#portrait)"/>
+        <text x="400" y="840" text-anchor="middle" font-size="12">Humas</text>
+        <text x="400" y="855" text-anchor="middle" font-size="10">Nama Humas</text>
+      </g>
+
+      <!--Koordinator Divisi-->
+      <g class="person">
+        <rect x="325" y="900" width="150" height="170" fill="white" rx="10" ry="10" stroke="#ccc" stroke-width="1"/>
+        <image x="345" y="910" width="110" height="130" href="https://i.pravatar.cc/200" clip-path="url(#portrait)"/>
+        <text x="400" y="1090" text-anchor="middle" font-size="12">Koordinator Divisi</text>
+        <text x="400" y="1105" text-anchor="middle" font-size="10">Nama Koordinator</text>
+      </g>
+
+      <!-- DIVISI RISMA Heading -->
+      <text x="400" y="1200" text-anchor="middle" font-size="28" font-weight="bold" font-family="Poppins" fill="url(#headingGradient)" stroke="#2c3e50" stroke-width="1">DIVISI RISMA</text>
+
+      <!-- Syiar Islam -->
+      <g class="person">
+        <rect x="50" y="1300" width="150" height="170" fill="white" rx="10" ry="10" stroke="#ccc" stroke-width="1"/>
+        <image x="50" y="1300" width="110" height="130" href="https://i.pravatar.cc/200" clip-path="url(#portrait)"/>
+        <text x="125" y="1500" text-anchor="middle" font-size="12">Ketua Divisi syiar islam</text>
+        <a xlink:href="syiar.html" x="125" y="1130" text-anchor="middle" font-size="10" fill="blue">Lihat Progja</a>
+        <rect x="50" y="1580" width="150" height="170" fill="white" rx="10" ry="10" stroke="#ccc" stroke-width="1"/>
+        <image x="50" y="1580" width="150" height="170" href="https://i.pravatar.cc/200" clip-path="url(#portrait)"/>
+        <text x="125" y="1780" text-anchor="middle" font-size="10">Anggota Divisi syiar islam</text>
+      </g>
+
+      <!-- Dana Usaha -->
+      <g class="person">
+        <rect x="225" y="1300" width="150" height="170" fill="white" rx="10" ry="10" stroke="#ccc" stroke-width="1"/>
+        <image x="225" y="1300" width="110" height="130" href="https://i.pravatar.cc/200" clip-path="url(#portrait)"/>
+        <text x="300" y="1500" text-anchor="middle" font-size="12">Ketua Divisi Dana Usaha</text>
+        <a xlink:href="dana.html" x="300" y="1380" text-anchor="middle" font-size="10" fill="blue">Lihat Progja</a>
+        <rect x="225" y="1580" width="150" height="170" fill="white" rx="10" ry="10" stroke="#ccc" stroke-width="1"/>
+        <image x="225" y="1580" width="150" height="170" href="https://i.pravatar.cc/200" clip-path="url(#portrait)"/>
+        <text x="300" y="1780" text-anchor="middle" font-size="10">Anggota Divisi Dana Usaha</text>
+      </g>
+
+      <!-- PSDM -->
+      <g class="person">
+        <rect x="400" y="1300" width="150" height="170" fill="white" rx="10" ry="10" stroke="#ccc" stroke-width="1"/>
+        <image x="400" y="1300" width="110" height="130" href="https://i.pravatar.cc/200" clip-path="url(#portrait)"/>
+        <text x="475" y="1500" text-anchor="middle" font-size="12">Ketua Divisi PSDM</text>
+        <a xlink:href="psdm.html" x="475" y="1380" text-anchor="middle" font-size="10" fill="blue">Lihat Progja</a>
+        <rect x="400" y="1580" width="150" height="170" fill="white" rx="10" ry="10" stroke="#ccc" stroke-width="1"/>
+        <image x="400" y="1580" width="150" height="170" href="https://i.pravatar.cc/200" clip-path="url(#portrait)"/>
+        <text x="475" y="1780" text-anchor="middle" font-size="10">Anggota Divisi PSDM</text>
+      </g>
+
+      <!-- PDD -->
+      <g class="person">
+        <rect x="575" y="1300" width="150" height="170" fill="white" rx="10" ry="10" stroke="#ccc" stroke-width="1"/>
+        <image x="575" y="1300" width="150" height="170" href="https://i.pravatar.cc/200" clip-path="url(#portrait)"/>
+        <text x="650" y="1500" text-anchor="middle" font-size="12">Ketua Divisi PDD</text>
+        <a xlink:href="prd.html" x="650" y="1380" text-anchor="middle" font-size="10" fill="blue">Lihat Progja</a>
+        <rect x="575" y="1580" width="150" height="170" fill="white" rx="10" ry="10" stroke="#ccc" stroke-width="1"/>
+        <image x="575" y="1580" width="150" height="170" href="https://i.pravatar.cc/200" clip-path="url(#portrait)"/>
+        <text x="650" y="1780" text-anchor="middle" font-size="10">Anggota divisi PDD</text>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<script>
+  // LOADING
+  setTimeout(() => {
+    document.getElementById("loading").style.display = "none";
+  }, 3000);
+
+  // NAVBAR SCROLL (though it's fixed background)
+  window.addEventListener("scroll", function() {
+    let navbar = document.getElementById("navbar");
+    navbar.classList.toggle("scrolled", window.scrollY > 50);
+  });
+</script>
+
+</body>
+</html>
